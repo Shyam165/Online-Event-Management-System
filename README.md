@@ -7,8 +7,8 @@ pip install django
 
 
 ### Perform database migrations
-python manage.py makemigrations
-python manage.py migrate
+1. python manage.py makemigrations
+2. python manage.py migrate
 
 ### Run the development server
 python manage.py runserver
