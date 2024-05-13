@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Booking 
+{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif; 
+    }
+
+    .booking-header {
+        background-image: url('{% static "images/index3.jpg" %}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 50px 0; 
+    }
+
+    .container {
+        margin-top: 20px; 
+    }
+
+    .form-group label {
+        color: rgb(55, 112, 255); 
+    }
+
+    .form-control {
+        background-color: rgba(255, 255, 255, 0.9); 
+        color: #000; 
+        border: none; 
+        border-radius: 5px; 
+        margin-bottom: 15px; 
+    }
+
+    .btn-primary {
+        background-color: rgb(55, 112, 255);
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-primary:hover {
+        background-color: rgb(45, 92, 204); 
+    }
+
+    /* Center the form */
+    .booking-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .card {
+        max-width: 400px; 
+        width: 100%;
+        padding: 30px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.8); 
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    }
+</style>
+
+<div class="booking-header" style="height: 650px;"> 
+    <!-- Booking Form -->
+    <div class="container">
+        <div class="booking-form">
+            <div class="card">
+                <h1 class="text-center" style="color: rgb(55, 112, 255); font-size: 2.5rem;">Book Your Events</h1>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="id_cus_name">Name:</label>
+                        {{ form.cus_name }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_cus_ph">Phone:</label>
+                        {{ form.cus_ph }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_name">Event:</label>
+                        {{ form.name }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_booking_date">Booking Date:</label>
+                        {{ form.booking_date }}
+                    </div>
+                    <button type="submit" class="btn btn-primary">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

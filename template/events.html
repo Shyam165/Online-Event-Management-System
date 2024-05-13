@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Events
+{% endblock %}
+
+{% block content %}
+<style>
+    .event-card {
+        margin-bottom: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+        border: 2px solid rgb(255, 255, 255); 
+        border-radius: 10px; 
+    }
+    .events-heading {
+        font-size: 36px;
+        font-weight: bold;
+        color: rgb(244, 23, 200);
+        margin-bottom: 15px;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 10px; 
+    }
+    h5{
+        font-weight: bold;
+    }
+    .card-img-top {
+        border: 2px solid rgb(244, 23, 200); 
+        border-radius: 10px; 
+    }
+    .card-title {
+        padding: 10px; 
+        margin-top: 10px; 
+        color: red; 
+        background-color: rgba(255, 255, 255, 0.8); 
+        border-radius: 10px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    }
+    .card-text {
+        border: 2px solid rgb(255, 255, 255);
+        border-radius: 10px; 
+        padding: 10px; 
+        margin-top: 10px; 
+        color: rgb(0, 0, 0); 
+        background-color: rgba(255, 255, 255, 0.8); 
+    }
+</style>
+<h2 class="events-heading">Discover Our Latest Events</h2>
+<div class="container">
+    <div class="row">
+        {% for i in eve %}
+        <div class="col-md-3 mb-4">
+            <div class="card event-card border-info h-100">
+                <img src="{{ i.img.url }}" class="card-img-top" alt="Event Image" style="height: 160px; width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{ i.name }}</h5>
+                    <p class="card-text text-center">{{ i.desc }}</p>
+                </div>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:4 and not forloop.last %}
+        </div>
+        <div class="row">
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

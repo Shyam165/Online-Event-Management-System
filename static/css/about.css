@@ -1,0 +1,27 @@
+.service {
+  background-color: rgb(55, 112, 255);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.service h1,
+.service h2 {
+  color: #fff;
+}
+
+.service p {
+  color: #000;
+}
+
+.service img {
+  margin-bottom: 10px;
+}
+
+.service .row {
+  margin-bottom: 20px;
+}
+
+.service hr {
+  border: 1px solid rgb(55, 112, 255);
+}
