@@ -3,7 +3,7 @@
 This is an Event Management System developed using Django, a high-level Python web framework.
 
 ### Install Django using pip
-pip install django
+1. pip install django
 
 
 ### Perform database migrations
@@ -11,4 +11,4 @@ pip install django
 2. python manage.py migrate
 
 ### Run the development server
-python manage.py runserver
+1. python manage.py runserver
