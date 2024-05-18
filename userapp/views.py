@@ -18,7 +18,7 @@ def user(request):
             else:
                 user_reg=User.objects.create_user(username=username,email=email,password=password)
                 user_reg.save()
-                messages.info(request,"Successfully created")
+                # messages.info(request,"Successfully created")
                 return redirect('/')
         else:
             messages.info(request,"Password doesn't match")
@@ -34,10 +34,10 @@ def login(request):
             auth.login(request,user)
             # messages.info(request,"Login Success")
             return redirect('/')
+
         else:
             messages.info(request,"Invalid")
             return redirect('register/')
-        
         
     return render(request,'log.html')
 

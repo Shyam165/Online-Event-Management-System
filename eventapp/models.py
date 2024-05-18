@@ -25,3 +25,19 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+    
+class Feedback(models.Model):
+    event_name = models.CharField(max_length=255)
+    date = models.DateField()
+    platform = models.CharField(max_length=255)
+    overall_experience = models.IntegerField(choices=[
+        (1, '1 - Very Poor'),
+        (2, '2 - Poor'),
+        (3, '3 - Average'),
+        (4, '4 - Good'),
+        (5, '5 - Excellent')
+    ])
+    enjoyed_most = models.TextField()
+
+    def __str__(self):
+        return f"Feedback for {self.event_name} on {self.date}"

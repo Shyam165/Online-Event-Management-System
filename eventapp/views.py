@@ -4,6 +4,9 @@ from .forms import BookingForm
 from datetime import datetime
 from .models import Contact
 from django.contrib import messages
+from .models import Feedback
+from django.utils.dateparse import parse_date
+
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -36,3 +39,25 @@ def contact(request):
         contact.save()
         messages.success(request, 'Your message has been sent!')
     return render(request, 'contact.html')
+
+
+def feedback_view(request):
+    if request.method == 'POST':
+        event_name = request.POST.get('eventName')
+        date = parse_date(request.POST.get('date'))
+        platform = request.POST.get('platform')
+        overall_experience = int(request.POST.get('overallExperience'))
+        enjoyed_most = request.POST.get('enjoyedMost')
+
+        feedback = Feedback(
+            event_name=event_name,
+            date=date,
+            platform=platform,
+            overall_experience=overall_experience,
+            enjoyed_most=enjoyed_most
+        )
+        feedback.save()
+        messages.success(request, 'Thank you for your feedback!')
+        # return redirect('/') 
+
+    return render(request, 'feedback.html')
