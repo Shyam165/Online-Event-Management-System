@@ -12,3 +12,8 @@ This is an Event Management System developed using Django, a high-level Python w
 
 ### Run the development server
 1. python manage.py runserver
+
+### Create a superuser
+1. To create a superuser, run the following command:
+   ```bash
+   python manage.py createsuperuser
