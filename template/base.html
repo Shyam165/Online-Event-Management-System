@@ -12,42 +12,56 @@
   
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
     <style>
-      .nav li a{
-          color: rgb(55, 112, 255);
-          font-size: 21px;
-      }
-      .navbar-brand{
-          color: rgb(55, 112, 255);
-          font-size: 25px;
-          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-      }
-      .navbar {
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-      }
-      .username-circle {
-          background-color: rgb(55, 112, 255);
-          color: white;
-          border-radius: 50%;
-          padding: 8px 15px;
-          font-size: 16px;
-          font-weight: bold;
-          margin-left: 10px;
-      }
-      .navbar-right {
-          display: flex;
-          align-items: center;
-      }
-      .navbar-nav.navbar-right li {
-          margin-left: 10px;
-      }
-      .navbar-nav.navbar-right li a {
-          color: rgb(55, 112, 255); 
-      }
-  </style>
+        .navbar {
+            background: linear-gradient(90deg, rgba(0,36,61,1) 0%, rgba(9,73,121,1) 35%, rgba(0,212,255,1) 100%);
+            border: none;
+            border-radius: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            height: 53px;
+        }
+        .navbar-brand {
+            color: #fff;
+            font-size: 25px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .nav li a {
+            color: #fff;
+            font-size: 21px;
+            transition: color 0.3s, background-color 0.3s;
+        }
+        .nav li a:hover {
+            color: #333;
+            background-color: #e6ff57af;
+        }
+        .username-circle {
+            background-color: #ffdd57;
+            color: #333;
+            border-radius: 50%;
+            padding: 8px 15px;
+            font-size: 16px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-nav.navbar-right li {
+            margin-left: 10px;
+        }
+        .navbar-nav.navbar-right li a {
+            color: #fff;
+            transition: color 0.3s, background-color 0.3s;
+        }
+        .navbar-nav.navbar-right li a:hover {
+            color: #333;
+            background-color: #ffdd57;
+        }
+    </style>
 </head>
 <body>
     <!-- navbar start -->
-    <nav class="navbar navbar-bg-light">
+    <nav class="navbar navbar-light">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="/">Events</a>
@@ -56,6 +70,7 @@
                 <li class="active"><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
                 {% if user.is_authenticated %}
+                    <li><a href="{% url 'gallery' %}">Gallery</a></li>
                     <li><a href="{% url 'events' %}">Events</a></li>
                     <li><a href="{% url 'booking' %}">Booking</a></li>
                     <li><a href="{% url 'contact' %}">Contact</a></li>

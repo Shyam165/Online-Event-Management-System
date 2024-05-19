@@ -5,54 +5,127 @@ About Us
 {% endblock %}
 
 {% block content %}
-<div class="container my-5" style="background-color: rgb(55, 112, 255); padding: 30px; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);">
-  <h1 class="text-center" style="color: #fff; text-align: center;">Welcome to Our Event Management System</h1>
-  <p class="text-center my-4" style="font-size: 18px; text-align: center; color: #fff;">We are a team of dedicated professionals committed to providing you with the best event management services.</p>
+<style>
+    body {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .navbar {
+        margin-bottom: 0;
+    }
+    .about-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("{% static 'images/about2.webp' %}") no-repeat center center/cover;
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+    }
+    .about-section h1 {
+        font-size: 50px;
+        margin-bottom: 20px;
+        font-family: 'Arial Narrow Bold', sans-serif;
+    }
+    .about-section p {
+        font-size: 20px;
+        width: 70%;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+    .team-section {
+        padding: 60px 0;
+        text-align: center;
+        background-color: #f9f9f9; /* Added background color */
+    }
+    .team-section h2 {
+        font-size: 40px;
+        margin-bottom: 30px;
+        color: rgb(55, 112, 255);
+    }
+    .team-member {
+        display: inline-block;
+        width: 300px;
+        margin: 20px;
+        vertical-align: top;
+        border: 2px solid #eee;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: white; /* Changed background color */
+    }
+    .team-member img {
+        width: 155px;
+        height: 150px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+    }
+    .team-member h3 {
+        margin-top: 0;
+        font-size: 24px;
+        color: rgb(55, 112, 255);
+    }
+    .team-member p {
+        font-size: 16px;
+        color: #666;
+    }
+    .mission-vision-section {
+        background-color: rgb(55, 112, 255);
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+    }
+    .mission-vision-section h2 {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+    .mission-vision-section p {
+        font-size: 18px;
+        width: 70%;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+    .contact-button {
+        display: inline-block;
+        padding: 15px 30px;
+        font-size: 20px;
+        background-color:wheat;
+        color: black;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 30px;
+        cursor: pointer; /* Add cursor pointer */
+    }
+    .contact-button:hover {
+        background-color: wheat; /* Change background color on hover */
+        color: black; /* Change text color on hover */
+    }
+</style>
 
-  <div class="item active" style="margin-bottom: 10px;">
-    <img src="{% static 'images/index5.jpg' %}" alt="" width="100%" height="500">
-  </div>
+<div class="about-section">
+    <h1>About Us</h1>
+    <p>Welcome to our Events Management System! We specialize in creating unforgettable experiences and memorable events. Our mission is to exceed your expectations and turn your dreams into reality.</p>
+</div>
 
-  <div class="row" style="margin-bottom: 20px;">
-    <div class="col-md-6" style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); background-color: #fff; border-radius: 10px; padding: 20px;">
-      <h2 style="color: rgb(55, 112, 255);">Our Mission</h2>
-      <p style="font-size: 18px; color: #000;">Our mission is to create unforgettable experiences for our clients and their guests. We strive to exceed expectations by delivering exceptional service, innovative solutions, and flawless execution.</p>
+<div class="team-section">
+    <h2>Meet Our Team</h2>
+    <div class="team-member">
+        <img src="{% static 'images/man1.jpeg' %}" alt="Team Member 1">
+        <h3>John Doe</h3>
+        <p>CEO & Founder</p>
     </div>
-    <div class="col-md-6" style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); background-color: #fff; border-radius: 10px; padding: 20px;">
-      <h2 style="color: rgb(55, 112, 255);">Our Vision</h2>
-      <p style="font-size: 18px; color: #000;">Our vision is to be the leading event management company in the industry, recognized for our creativity, professionalism, and commitment to excellence.</p>
+    <div class="team-member">
+        <img src="{% static 'images/man2.jpg' %}" alt="Team Member 2">
+        <h3>Jane Smith</h3>
+        <p>Event Manager</p>
     </div>
-  </div>
-  <hr style="border: 1px solid rgb(55, 112, 255);">
-  <div class="row" style="margin-bottom: 20px;">
-    <div class="col-md-4" style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); background-color: #fff; border-radius: 10px; padding: 20px;">
-      <h2 style="color: rgb(55, 112, 255);">Event Planning</h2>
-      <p style="font-size: 18px; color: #000;">We offer comprehensive event planning services, from concept development to execution. Our team will work closely with you to understand your vision and bring it to life.</p>
+    <div class="team-member">
+        <img src="{% static 'images/man3.jpeg' %}" alt="Team Member 3">
+        <h3>Michael Brown</h3>
+        <p>Marketing Head</p>
     </div>
-    <div class="col-md-4" style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); background-color: #fff; border-radius: 10px; padding: 20px;">
-      <h2 style="color: rgb(55, 112, 255);">Event Production</h2>
-      <p style="font-size: 18px; color: #000;">We provide full-service event production, including lighting, sound, staging, and decor. Our team has the expertise and resources to create a truly memorable event.</p>
-    </div>
-    <div class="col-md-4" style="box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); background-color: #fff; border-radius: 10px; padding: 20px;">
-      <h2 style="color: rgb(55, 112, 255);">Event Management</h2>
-      <p style="font-size: 18px; color: #000;">We offer on-site event management services to ensure that everything runs smoothly on the day of your event. Our team will handle all the details, so you can relax and enjoy the event.</p>
-    </div>
-  </div>
-  <hr style="border: 1px solid rgb(55, 112, 255);">
-  <div class="row" style="margin-bottom: 20px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); background-color: #fff; border-radius: 10px; padding: 20px;">
-    <div class="col-md-12">
-      <h2 style="color: rgb(55, 112, 255);">Our Team</h2>
-      <p style="font-size: 18px; color: #000;">Our team is made up of experienced professionals who are passionate about creating unforgettable events. We have a diverse range of skills and expertise, allowing us to handle any event, no matter how big or small.</p>
-    </div>
-  </div>
-  <hr style="border: 1px solid rgb(55, 112, 255);">
-  <div class="row" style="margin-bottom: 20px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); background-color: #fff; border-radius: 10px; padding: 20px;">
-    <div class="col-md-12">
-      <h2 style="color: rgb(55, 112, 255);">Contact Us</h2>
-      <p style="font-size: 18px; color: #000;">
-        If you're interested in our services, please don't hesitate to contact us. We would be delighted to discuss your event and how we can help make it a success.</p>
-      </div>
-    </div>
-  </div>
-  {% endblock %}
-  
+</div>
+
+<div class="mission-vision-section">
+    <h2>Our Mission & Vision</h2>
+    <p>Our mission is to create exceptional events that leave a lasting impression. We strive to provide innovative solutions, personalized service, and attention to detail to make every event unforgettable.</p>
+    <p>Our vision is to be the leading events management company, known for our creativity, professionalism, and commitment to excellence.</p>
+    <a href="{% url 'contact' %}" class="contact-button">Contact Us</a>
+</div>
+{% endblock %}

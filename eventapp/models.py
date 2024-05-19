@@ -7,13 +7,17 @@ class Event(models.Model):
     desc=models.CharField(max_length=50)
     def __str__(self):
         return self.name
-
+    
 class Booking(models.Model):
-    cus_name=models.CharField(max_length=55)
-    cus_ph=models.CharField(max_length=12)
-    name=models.ForeignKey(Event,on_delete=models.CASCADE)
-    booking_date=models.DateField()
-    booked_on=models.DateField(auto_now=True)
+    cus_name = models.CharField(max_length=55)
+    cus_ph = models.CharField(max_length=12)
+    name = models.ForeignKey(Event, on_delete=models.CASCADE)
+    booking_date = models.DateField()
+    booked_on = models.DateField(auto_now=True)
+    members_attending = models.PositiveIntegerField(default=1) 
+
+    def __str__(self):
+        return f"{self.cus_name} - {self.name.name}"
 
 
 class Contact(models.Model):
