@@ -20,15 +20,30 @@ def events(request):
     }
     return render(request,'events.html',dict_eve)
 def booking(request):
+    approximate_amount = 0
+    cost_per_member = 50  # cost per member
+    
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('/')
+            booking = form.save(commit=False)
+            booking.approximate_amount = booking.members_attending * cost_per_member
+            booking.save()
+            messages.success(request, f"Booking successful! Approximate amount: ${booking.approximate_amount}")
+            # return redirect('/') 
+    else:
+        form = BookingForm()
 
-    form = BookingForm()
+    if request.method == 'GET' and 'members_attending' in request.GET:
+        try:
+            members_attending = int(request.GET.get('members_attending'))
+            approximate_amount = members_attending * cost_per_member
+        except (ValueError, TypeError):
+            approximate_amount = 0
+
     dict_form = {
-        'form': form
+        'form': form,
+        'approximate_amount': approximate_amount
     }
     return render(request, 'booking.html', dict_form)
 def contact(request):

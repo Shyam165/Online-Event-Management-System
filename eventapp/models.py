@@ -14,7 +14,8 @@ class Booking(models.Model):
     name = models.ForeignKey(Event, on_delete=models.CASCADE)
     booking_date = models.DateField()
     booked_on = models.DateField(auto_now=True)
-    members_attending = models.PositiveIntegerField(default=1) 
+    members_attending = models.PositiveIntegerField(default=1)
+    approximate_amount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
     def __str__(self):
         return f"{self.cus_name} - {self.name.name}"

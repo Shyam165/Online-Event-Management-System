@@ -74,7 +74,7 @@ Booking
     }
 
     .booking-image {
-        margin-left: 20px; /* Adjust margin to create space between form and image */
+        margin-right: 50px; /* Adjust margin to create space between image and form */
     }
 
     .booking-image img {
@@ -88,6 +88,9 @@ Booking
 
 <div class="booking-header">
     <div class="container">
+        <div class="booking-image">
+            <img src="{% static 'images/bookevent.png' %}" alt="Booking Image">
+        </div>
         <div class="card">
             <h1 class="booking-title">Book Your Events</h1>
             <form action="" method="POST">
@@ -112,12 +115,36 @@ Booking
                     <label for="id_members_attending">Number of Members Attending:</label> <!-- New field -->
                     {{ form.members_attending }}
                 </div>
+                <div class="form-group">
+                    <label>Approximate Amount:</label>
+                    <p id="approximate-amount">{{ approximate_amount }}</p>
+                </div>
                 <button type="submit" class="btn btn-primary">Book Now</button>
             </form>
         </div>
-        <div class="booking-image">
-            <img src="{% static 'images/bookevent.png' %}" alt="Booking Image">
-        </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const membersInput = document.getElementById('id_members_attending');
+        const approximateAmountElement = document.getElementById('approximate-amount');
+
+        function updateApproximateAmount() {
+            const members = parseInt(membersInput.value) || 0;
+            const costPerMember = 50; // Example cost per member
+            const approximateAmount = members * costPerMember;
+            approximateAmountElement.textContent = approximateAmount;
+        }
+
+        membersInput.addEventListener('input', updateApproximateAmount);
+        updateApproximateAmount(); // Initial call to set the value
+    });
+ 
+</script>
+    {% for message in messages %}
+    <script>
+        alert('{{ message }}');
+    </script>
+    {% endfor %}
 {% endblock %}
