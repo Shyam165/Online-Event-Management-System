@@ -16,6 +16,8 @@ This project aims to streamline the process of event management by providing a u
 - **Django**: The primary framework used for backend development.
 - **Bootstrap**: For responsive and modern frontend design.
 - **SQLite**: Default database for development and testing purposes.
+- **HTML/CSS**: Standard languages for web markup and styling.
+- **JavaScript**: Versatile language for web interactivity.
 
 The project is structured to follow best practices in web development, ensuring maintainability and scalability.
 
@@ -43,3 +45,32 @@ python manage.py runserver
 ```bash
 python manage.py createsuperuser
 ```
+
+
+### Event Management System Diagrams Overview
+1. Event Management System Class Diagram
+   ![image](https://github.com/Shyam165/Online-Event-Management-System/assets/111563134/4cf50a24-8c2b-4528-b7c3-1d2984bd8227)
+
+2. Event Management System Data Flow Diagram (DFD)
+   ![image](https://github.com/Shyam165/Online-Event-Management-System/assets/111563134/94d49006-4056-4666-95f7-d3c066a74285)
+
+3. Event Management System Use Case Diagram
+   ![usecase](https://github.com/Shyam165/Online-Event-Management-System/assets/111563134/cc64e04b-6518-4fcf-b230-b5870c60cdb6)
+
+### Snashots of the Project:
+1. **Registration Page**
+2. **Login Page**
+3. **Home Page**
+4. **About us Page**
+5. **Gallery Page**
+6. **Events Page**
+7. **Booking Page**
+8. **Contact Page**
+9. **FeedBack Page**
+
+### Deployment Link
+
+[Live Deployment Link](https://yourapp.pythonanywhere.com/)
+
+
+
