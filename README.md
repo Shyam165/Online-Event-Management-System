@@ -70,7 +70,7 @@ python manage.py createsuperuser
 
 ### Deployment Link
 
-[Live Deployment Link](https://yourapp.pythonanywhere.com/)
+[Live Deployment Link](https://shyam175.pythonanywhere.com/)
 
 
 
