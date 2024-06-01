@@ -1,25 +1,6 @@
 ## Event Management System
 
-This Event Management System is a web application developed using Django, a high-level Python web framework that encourages rapid development and clean, pragmatic design. The system allows users to manage events efficiently, providing features for event creation, booking, and user authentication.
-
-### Features
-
-- **User Registration and Authentication**: Users can create accounts, log in, and log out securely.
-- **Event Management**: Authenticated users can create, view, and manage events.
-- **Booking System**: Users can book events and view their bookings.
-- **Contact Form**: A contact form for users to reach out with inquiries or feedback.
-
-This project aims to streamline the process of event management by providing a user-friendly interface and robust backend functionality. It can be used by event organizers to manage various types of events, handle bookings, and communicate with participants effectively.
-
-### Technologies Used
-
-- **Django**: The primary framework used for backend development.
-- **Bootstrap**: For responsive and modern frontend design.
-- **SQLite**: Default database for development and testing purposes.
-- **HTML/CSS**: Standard languages for web markup and styling.
-- **JavaScript**: Versatile language for web interactivity.
-
-The project is structured to follow best practices in web development, ensuring maintainability and scalability.
+The Event Management System, a web-based application crafted with Django, simplifies event creation, booking, and management. Designed for efficiency, it offers users a seamless interface for tasks like user registration, event booking, and feedback provision. Developed during an internship at Infosys Springboard, it prioritizes user experience, security, and operational efficiency. Its core features encompass user authentication, event management, booking system, and a contact form for inquiries.
 
 
 ### Install Django using pip
@@ -46,6 +27,15 @@ python manage.py runserver
 python manage.py createsuperuser
 ```
 
+### Technologies Used
+
+- **Django**: The primary framework used for backend development.
+- **Bootstrap**: For responsive and modern frontend design.
+- **SQLite**: Default database for development and testing purposes.
+- **HTML/CSS**: Standard languages for web markup and styling.
+- **JavaScript**: Versatile language for web interactivity.
+
+The project is structured to follow best practices in web development, ensuring maintainability and scalability.
 
 ### Event Management System Diagrams Overview
 1. Event Management System Class Diagram
@@ -59,6 +49,17 @@ python manage.py createsuperuser
 3. Event Management System Use Case Diagram
 
    ![usecase](https://github.com/Shyam165/Online-Event-Management-System/assets/111563134/cc64e04b-6518-4fcf-b230-b5870c60cdb6)
+
+
+### Features
+
+- **User Registration and Authentication**: Users can create accounts, log in, and log out securely.
+- **Event Management**: Authenticated users can create, view, and manage events.
+- **Booking System**: Users can book events and view their bookings.
+- **Contact Form**: A contact form for users to reach out with inquiries or feedback.
+
+This project aims to streamline the process of event management by providing a user-friendly interface and robust backend functionality. It can be used by event organizers to manage various types of events, handle bookings, and communicate with participants effectively.
+
 
 ### Snashots of the Project:
 1. **Registration Page**
