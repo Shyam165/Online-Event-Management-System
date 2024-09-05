@@ -30,7 +30,9 @@ def booking(request):
             booking.approximate_amount = booking.members_attending * cost_per_member
             booking.save()
             messages.success(request, f"Booking successful! Approximate amount: ${booking.approximate_amount}")
-            # return redirect('/') 
+        else:
+            # If the form is invalid, errors will be shown on the template.
+            messages.error(request, "There was an issue with your booking. Please review the errors below.")
     else:
         form = BookingForm()
 
@@ -46,6 +48,7 @@ def booking(request):
         'approximate_amount': approximate_amount
     }
     return render(request, 'booking.html', dict_form)
+
 def contact(request):
     if request.method == "POST":
         name = request.POST.get('name')
